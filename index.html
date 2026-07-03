@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>108 PhotoBooth — Luxury Photo Booth Rental in Houston, TX</title>
+<meta name="description" content="108 PhotoBooth — luxury photo booth rental in Houston. Unlimited digital photos, GIFs & boomerangs with instant sharing. Packages from $399.">
+
+<!-- ============================================================
+     EASY-EDIT GUIDE
+     - Business email/phone/Instagram: search "EDIT:" below
+     - Prices: see the .packages section
+     - Gallery: swap the placeholder tiles with real photos (see GALLERY note)
+     - To use a real form backend instead of email: see the FORM note
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1a1712;
+    --ink-soft:#4a443a;
+    --paper:#fffdf9;
+    --paper-2:#f7f2e7;
+    --gold:#bf9b40;
+    --gold-deep:#9c7d2e;
+    --gold-light:#e7d8a8;
+    --line:rgba(26,23,18,.12);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Jost',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* grain overlay */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:.01em}
+  a{color:inherit;text-decoration:none}
+  .gold{color:var(--gold-deep)}
+  .eyebrow{
+    font-family:var(--sans);font-weight:400;font-size:.72rem;letter-spacing:.38em;
+    text-transform:uppercase;color:var(--gold-deep);
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;transition:.4s;
+  }
+  nav.scrolled{
+    background:rgba(255,253,249,.88);backdrop-filter:blur(12px);
+    box-shadow:0 1px 0 var(--line);padding:14px 32px;
+  }
+  .logo{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+  .logo .mark{
+    display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;
+    border:1.5px solid var(--gold);color:var(--gold-deep);font-size:.95rem;letter-spacing:.04em;
+  }
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);transition:.25s}
+  .nav-links a:hover{color:var(--gold-deep)}
+  .nav-cta{
+    border:1px solid var(--gold);padding:9px 20px;border-radius:40px;color:var(--ink)!important;
+    font-size:.78rem;letter-spacing:.14em;transition:.3s;
+  }
+  .nav-cta:hover{background:var(--gold);color:#fff!important;border-color:var(--gold)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .burger span{width:24px;height:1.5px;background:var(--ink)}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    background:
+      radial-gradient(120% 90% at 80% 10%,rgba(231,216,168,.55),transparent 55%),
+      radial-gradient(90% 80% at 0% 100%,rgba(191,155,64,.18),transparent 50%),
+      var(--paper);
+    overflow:hidden;
+  }
+  .hero-ring{
+    position:absolute;right:-12%;top:50%;transform:translateY(-50%);
+    width:min(70vw,820px);aspect-ratio:1;border-radius:50%;
+    border:1px solid var(--gold-light);
+    background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.7),transparent 60%);
+    box-shadow:inset 0 0 120px rgba(191,155,64,.15);
+    opacity:.9;
+  }
+  .hero-ring::after{
+    content:"";position:absolute;inset:9%;border-radius:50%;border:1px solid var(--gold-light);opacity:.6;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:720px;padding-top:60px}
+  .hero h1{font-size:clamp(3.4rem,9vw,7rem);letter-spacing:-.01em}
+  .hero h1 em{font-style:italic;color:var(--gold-deep)}
+  .hero p.lede{
+    font-size:clamp(1.05rem,2vw,1.35rem);color:var(--ink-soft);max-width:540px;margin:26px 0 38px;font-weight:300;
+  }
+  .hero .meta{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:22px}
+  .btns{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 32px;border-radius:44px;
+    font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;transition:.35s;cursor:pointer;border:none;
+  }
+  .btn-gold{background:var(--ink);color:var(--paper)}
+  .btn-gold:hover{background:var(--gold-deep);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-deep)}
+
+  /* reveal animation */
+  .rv{opacity:0;transform:translateY(26px);transition:.9s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .hero .rv{transition-delay:var(--d,0s)}
+
+  /* ---------- TRUST BAR ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .trust .wrap{
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+    padding-top:34px;padding-bottom:34px;flex-wrap:wrap;
+  }
+  .trust-item{text-align:center;flex:1;min-width:140px}
+  .trust-item strong{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--gold-deep);display:block;line-height:1.1}
+  .trust-item span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:120px 0;position:relative}
+  .sec-head{max-width:640px;margin-bottom:64px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(2.4rem,5vw,3.6rem);margin:14px 0}
+  .sec-head p{color:var(--ink-soft);font-size:1.05rem}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:4px;padding:40px 32px;
+    transition:.4s;position:relative;
+  }
+  .step:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(156,125,46,.5);border-color:var(--gold-light)}
+  .step .num{font-family:var(--serif);font-size:2.6rem;color:var(--gold);font-weight:500;line-height:1}
+  .step h3{font-size:1.5rem;margin:16px 0 10px}
+  .step p{color:var(--ink-soft);font-size:.96rem}
+
+  /* experience */
+  .experience{background:var(--paper-2)}
+  .exp-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+  .exp-visual{
+    aspect-ratio:4/5;border-radius:6px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle at 30% 25%,rgba(231,216,168,.7),transparent 55%),
+      linear-gradient(135deg,#fff,var(--paper-2));
+    border:1px solid var(--gold-light);display:grid;place-items:center;
+  }
+  .booth{display:flex;flex-direction:column;align-items:center;gap:0}
+  .booth-head{
+    width:150px;height:190px;border-radius:16px;background:var(--ink);
+    display:grid;place-items:center;position:relative;
+    box-shadow:0 30px 60px -30px rgba(26,23,18,.5);
+  }
+  .booth-head::before{
+    content:"";position:absolute;inset:12px;border-radius:10px;
+    background:radial-gradient(circle at 50% 42%,rgba(231,216,168,.35),transparent 60%),#2a251c;
+  }
+  .booth-lens{
+    position:relative;z-index:1;width:64px;height:64px;border-radius:50%;
+    border:3px solid var(--gold);background:radial-gradient(circle at 38% 35%,#fff8e6 8%,var(--gold-deep) 60%,#5c4a1b);
+    box-shadow:0 0 40px rgba(191,155,64,.6);
+  }
+  .booth-pole{width:10px;height:120px;background:linear-gradient(180deg,var(--ink),#3b342a)}
+  .booth-base{width:120px;height:14px;border-radius:8px;background:var(--ink)}
+  .exp-caption{
+    position:absolute;bottom:22px;left:0;right:0;text-align:center;
+    font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);
+  }
+  .exp-copy h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:14px 0 18px}
+  .exp-copy>p{color:var(--ink-soft);margin-bottom:26px}
+  .feat-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:34px}
+  .feat-list li{display:flex;gap:14px;align-items:flex-start;font-size:.98rem;color:var(--ink-soft)}
+  .feat-list li strong{color:var(--ink);font-weight:500}
+  .feat-list .fx{
+    flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);
+    color:var(--gold-deep);display:grid;place-items:center;font-size:.72rem;margin-top:2px;
+  }
+
+  /* packages */
+  .packages{background:var(--ink);color:var(--paper)}
+  .packages .eyebrow{color:var(--gold-light)}
+  .packages .sec-head p{color:rgba(251,249,244,.6)}
+  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+  .pkg{
+    border:1px solid rgba(231,216,168,.25);border-radius:6px;padding:42px 34px;position:relative;
+    background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);transition:.4s;
+    display:flex;flex-direction:column;
+  }
+  .pkg:hover{border-color:var(--gold);transform:translateY(-6px)}
+  .pkg.feature{background:linear-gradient(180deg,rgba(191,155,64,.16),rgba(191,155,64,.02));border-color:var(--gold)}
+  .pkg .tag{position:absolute;top:-12px;left:34px;background:var(--gold);color:var(--ink);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;padding:5px 14px;border-radius:30px;font-weight:500}
+  .pkg h3{font-size:1.7rem;color:var(--paper)}
+  .pkg .price{font-family:var(--serif);font-size:3.2rem;color:var(--gold-light);margin:8px 0 4px;font-weight:500}
+  .pkg .price span{font-size:1rem;color:rgba(251,249,244,.55);font-family:var(--sans);letter-spacing:.1em}
+  .pkg ul{list-style:none;margin:24px 0 30px;display:flex;flex-direction:column;gap:13px;flex:1}
+  .pkg li{font-size:.95rem;color:rgba(251,249,244,.82);padding-left:26px;position:relative}
+  .pkg li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border:1px solid var(--gold);border-radius:50%}
+  .pkg .btn{width:100%;justify-content:center}
+  .packages .btn-gold{background:var(--gold);color:var(--ink)}
+  .packages .btn-gold:hover{background:var(--gold-light)}
+  .pkg-note{text-align:center;margin-top:40px;color:rgba(251,249,244,.5);font-size:.9rem;letter-spacing:.04em}
+  .addons{margin-top:64px}
+  .addons h3{text-align:center;font-size:1.6rem;color:var(--gold-light);margin-bottom:28px}
+  .addon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+  .addon{
+    border:1px solid rgba(231,216,168,.25);border-radius:6px;padding:20px 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;transition:.3s;
+  }
+  .addon:hover{border-color:var(--gold)}
+  .addon strong{font-weight:400;font-size:.92rem;letter-spacing:.04em;color:rgba(251,249,244,.85)}
+  .addon span{font-family:var(--serif);font-size:1.3rem;color:var(--gold-light);white-space:nowrap}
+
+  /* gallery */
+  /* GALLERY: replace each .tile's gradient with a real photo:
+     <figure class="tile" style="background-image:url('photos/wedding.jpg')">
+     and add  background-size:cover;background-position:center  (already in .tile) */
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .tile{
+    aspect-ratio:4/5;border-radius:6px;position:relative;overflow:hidden;
+    border:1px solid var(--line);background-size:cover;background-position:center;
+    display:flex;align-items:flex-end;transition:.4s;
+  }
+  .tile:hover{transform:translateY(-5px);box-shadow:0 26px 50px -30px rgba(156,125,46,.55);border-color:var(--gold-light)}
+  .tile figcaption{
+    width:100%;padding:16px 18px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-soft);background:linear-gradient(transparent,rgba(255,253,249,.92) 40%);
+  }
+  .tile.g1{background-image:radial-gradient(circle at 30% 30%,rgba(231,216,168,.8),transparent 60%),linear-gradient(160deg,#fff,var(--paper-2))}
+  .tile.g2{background-image:radial-gradient(circle at 70% 20%,rgba(191,155,64,.35),transparent 55%),linear-gradient(200deg,var(--paper-2),#fff)}
+  .tile.g3{background-image:radial-gradient(circle at 50% 70%,rgba(231,216,168,.75),transparent 60%),linear-gradient(120deg,#fff,#f3ecdb)}
+  .tile.g4{background-image:radial-gradient(circle at 20% 80%,rgba(191,155,64,.3),transparent 55%),linear-gradient(240deg,#f3ecdb,#fff)}
+  .tile.g5{background-image:radial-gradient(circle at 80% 60%,rgba(231,216,168,.8),transparent 60%),linear-gradient(300deg,#fff,var(--paper-2))}
+  .tile.g6{background-image:radial-gradient(circle at 40% 20%,rgba(191,155,64,.32),transparent 55%),linear-gradient(30deg,var(--paper-2),#fff)}
+  .tile .cam{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);
+    font-family:var(--serif);font-size:2.2rem;color:var(--gold);opacity:.85;
+  }
+
+  /* testimonials */
+  .quotes{background:var(--paper-2)}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .quote-grid blockquote{
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:36px 32px;
+    display:flex;flex-direction:column;gap:18px;transition:.4s;
+  }
+  .quote-grid blockquote:hover{border-color:var(--gold-light);transform:translateY(-5px);box-shadow:0 24px 50px -30px rgba(156,125,46,.5)}
+  .quote-grid .stars{color:var(--gold);letter-spacing:.2em;font-size:.9rem}
+  .quote-grid p{font-family:var(--serif);font-size:1.22rem;font-style:italic;line-height:1.4;color:var(--ink)}
+  .quote-grid cite{font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-top:auto}
+
+  /* faq */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:0 28px;transition:.3s;
+  }
+  details[open]{border-color:var(--gold-light);box-shadow:0 18px 40px -30px rgba(156,125,46,.5)}
+  summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:22px 0;font-family:var(--serif);font-size:1.3rem;font-weight:500;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:1.5rem;color:var(--gold-deep);transition:.3s;flex:none}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{color:var(--ink-soft);padding-bottom:24px;font-size:.98rem;max-width:640px}
+
+  /* ---------- BOOKING FORM ---------- */
+  .book{background:var(--paper-2)}
+  .book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+  .book-intro h2{font-size:clamp(2.4rem,5vw,3.6rem);margin:14px 0 18px}
+  .book-intro p{color:var(--ink-soft);margin-bottom:24px}
+  .book-detail{font-size:.92rem;color:var(--ink-soft);display:flex;flex-direction:column;gap:14px;margin-top:30px}
+  .book-detail div{display:flex;gap:12px;align-items:center}
+  .book-detail .ic{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);color:var(--gold-deep);display:grid;place-items:center;flex:none;font-size:.9rem}
+  form{background:#fff;border:1px solid var(--line);border-radius:8px;padding:42px;box-shadow:0 30px 70px -50px rgba(156,125,46,.6)}
+  .field{margin-bottom:20px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  label{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  input,select,textarea{
+    width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:4px;background:var(--paper);
+    font-family:var(--sans);font-size:.95rem;color:var(--ink);transition:.25s;
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(191,155,64,.12)}
+  textarea{resize:vertical;min-height:90px}
+  form .btn{width:100%;justify-content:center;margin-top:8px}
+  .form-note{font-size:.78rem;color:var(--ink-soft);text-align:center;margin-top:16px}
+
+  /* footer */
+  footer{background:var(--ink);color:var(--paper);padding:70px 0 40px;text-align:center}
+  footer .logo{justify-content:center;color:var(--paper);margin-bottom:20px}
+  footer .logo .mark{border-color:var(--gold);color:var(--gold-light)}
+  .foot-links{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin:24px 0}
+  .foot-links a{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,249,244,.7);transition:.25s}
+  .foot-links a:hover{color:var(--gold-light)}
+  .copy{font-size:.78rem;color:rgba(251,249,244,.4);letter-spacing:.06em;margin-top:18px}
+
+  /* responsive */
+  @media(max-width:880px){
+    .steps,.gal-grid,.quote-grid{grid-template-columns:1fr}
+    .gal-grid{grid-template-columns:1fr 1fr}
+    .exp-grid,.book-grid{grid-template-columns:1fr;gap:46px}
+    .exp-visual{max-width:420px;margin:0 auto}
+    .nav-links{display:none}
+    .burger{display:flex}
+    .hero-ring{opacity:.5;right:-30%}
+    section{padding:84px 0}
+    .row2{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){
+    .gal-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="logo"><span class="mark">108</span></a>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#experience">The Booth</a>
+    <a href="#packages">Packages</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book" class="nav-cta">Check Availability</a>
+  </div>
+  <div class="burger" onclick="document.getElementById('book').scrollIntoView()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-ring rv" style="--d:.1s"></div>
+    <p class="meta rv" style="--d:0s">Luxury Photo Booth · Houston, TX</p>
+    <h1 class="rv" style="--d:.12s">Strike a pose,<br><em>keep the moment.</em></h1>
+    <p class="lede rv" style="--d:.24s">108 PhotoBooth brings a sleek, modern photo booth experience to Houston weddings, quinceañeras, and celebrations — unlimited photos, GIFs &amp; boomerangs, shared to your guests' phones in seconds.</p>
+    <div class="btns rv" style="--d:.34s">
+      <a href="#book" class="btn btn-gold">Check Your Date</a>
+      <a href="#packages" class="btn btn-ghost">View Packages</a>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item rv"><strong>100+</strong><span>Events Captured</span></div>
+    <div class="trust-item rv" style="transition-delay:.08s"><strong>5.0★</strong><span>Client Rating</span></div>
+    <div class="trust-item rv" style="transition-delay:.16s"><strong>Unlimited</strong><span>Digital Captures</span></div>
+    <div class="trust-item rv" style="transition-delay:.24s"><strong>Houston</strong><span>&amp; Surrounding Areas</span></div>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Simple &amp; Seamless</p>
+      <h2>How it works</h2>
+      <p>From first message to final gallery, we make it effortless — you enjoy the party, we handle the rest.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <div class="num">01</div>
+        <h3>Book Your Date</h3>
+        <p>Send us your event date and details. We'll confirm availability and lock in your booking with a small retainer.</p>
+      </div>
+      <div class="step rv" style="transition-delay:.12s">
+        <div class="num">02</div>
+        <h3>We Handle Everything</h3>
+        <p>We arrive early to set up the booth, props, and signage — and a friendly attendant keeps everything running all night.</p>
+      </div>
+      <div class="step rv" style="transition-delay:.24s">
+        <div class="num">03</div>
+        <h3>Guests Snap &amp; Share</h3>
+        <p>Photos, GIFs, and boomerangs sent straight to guests' phones — plus a full online gallery delivered after the event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="wrap exp-grid">
+    <div class="exp-visual rv">
+      <div class="booth">
+        <div class="booth-head"><div class="booth-lens"></div></div>
+        <div class="booth-pole"></div>
+        <div class="booth-base"></div>
+      </div>
+      <p class="exp-caption">The 108 Booth</p>
+    </div>
+    <div class="exp-copy rv" style="transition-delay:.15s">
+      <p class="eyebrow">The Experience</p>
+      <h2>A modern booth with a <span class="gold">five-star feel.</span></h2>
+      <p>No bulky box, no clunky kiosk. Our sleek open-air booth has studio lighting and a crisp touchscreen guests figure out instantly — it looks beautiful in any venue and fits the whole group in frame.</p>
+      <ul class="feat-list">
+        <li><span class="fx">✦</span><div><strong>Photos, GIFs &amp; boomerangs</strong> — guests pick their capture style with one tap.</div></li>
+        <li><span class="fx">✦</span><div><strong>Instant text &amp; QR sharing</strong> — every capture on their phone in seconds.</div></li>
+        <li><span class="fx">✦</span><div><strong>Color &amp; black &amp; white</strong> — vivid color and timeless B&amp;W, every session.</div></li>
+        <li><span class="fx">✦</span><div><strong>Custom photo templates</strong> — overlays designed to match your names, date, or brand.</div></li>
+        <li><span class="fx">✦</span><div><strong>Props &amp; signage</strong> — a curated prop table and elegant welcome sign.</div></li>
+        <li><span class="fx">✦</span><div><strong>Online gallery</strong> — relive every capture after your event.</div></li>
+      </ul>
+      <a href="#book" class="btn btn-gold">Reserve Your Date</a>
+    </div>
+  </div>
+</section>
+
+<section class="packages" id="packages">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Packages</p>
+      <h2>Simple, honest pricing.</h2>
+      <p>Every package includes delivery, setup &amp; teardown, a professional attendant, unlimited digital sessions, and instant sharing.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg rv">
+        <h3>The Essential</h3>
+        <div class="price">$399<span> / 2 hrs</span></div>
+        <ul>
+          <li>Unlimited photos, GIFs &amp; boomerangs</li>
+          <li>Instant text / QR sharing</li>
+          <li>Color &amp; black &amp; white</li>
+          <li>On-site attendant</li>
+          <li>Online photo gallery</li>
+        </ul>
+        <a href="#book" class="btn btn-ghost" style="border-color:var(--gold-light);color:var(--gold-light)">Book Essential</a>
+      </div>
+      <div class="pkg feature rv" style="transition-delay:.1s">
+        <span class="tag">Most Popular</span>
+        <h3>The Signature</h3>
+        <div class="price">$549<span> / 3 hrs</span></div>
+        <ul>
+          <li>Everything in The Essential</li>
+          <li>Curated props table</li>
+          <li>Custom welcome signage</li>
+          <li>Custom photo template design</li>
+          <li>Priority date reservation</li>
+        </ul>
+        <a href="#book" class="btn btn-gold">Book Signature</a>
+      </div>
+      <div class="pkg rv" style="transition-delay:.2s">
+        <h3>The Luxe</h3>
+        <div class="price">$749<span> / 4 hrs</span></div>
+        <ul>
+          <li>Everything in The Signature</li>
+          <li>Premium prop collection</li>
+          <li>Fully bespoke template suite</li>
+          <li>1 hour of idle time included</li>
+          <li>Perfect for weddings &amp; galas</li>
+        </ul>
+        <a href="#book" class="btn btn-ghost" style="border-color:var(--gold-light);color:var(--gold-light)">Book Luxe</a>
+      </div>
+    </div>
+
+    <div class="addons rv">
+      <h3>Add-Ons</h3>
+      <div class="addon-grid">
+        <div class="addon"><strong>Additional Hour</strong><span>$100</span></div>
+        <div class="addon"><strong>Idle Hour</strong><span>$50</span></div>
+        <div class="addon"><strong>Custom Template Design</strong><span>$50</span></div>
+        <div class="addon"><strong>Premium Props &amp; Signage</strong><span>$75</span></div>
+      </div>
+    </div>
+    <p class="pkg-note">A retainer secures your date — dates are first come, first served. Travel within 30 miles of Houston included; beyond that, quoted upfront.</p>
+  </div>
+</section>
+
+<!-- GALLERY: these tiles are elegant placeholders. To show real photos, replace
+     each tile's class (g1–g6) with an inline style, e.g.
+     <figure class="tile" style="background-image:url('photos/wedding.jpg')"> -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Recent Events</p>
+      <h2>The gallery</h2>
+      <p>A peek at the moments we've captured across Houston — swap these tiles with your own event photos.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="tile g1 rv"><span class="cam">✦</span><figcaption>Wedding · Downtown Houston</figcaption></figure>
+      <figure class="tile g2 rv" style="transition-delay:.08s"><span class="cam">✦</span><figcaption>Quinceañera · Katy</figcaption></figure>
+      <figure class="tile g3 rv" style="transition-delay:.16s"><span class="cam">✦</span><figcaption>Corporate Gala · Galleria</figcaption></figure>
+      <figure class="tile g4 rv"><span class="cam">✦</span><figcaption>Birthday · The Heights</figcaption></figure>
+      <figure class="tile g5 rv" style="transition-delay:.08s"><span class="cam">✦</span><figcaption>Graduation · Sugar Land</figcaption></figure>
+      <figure class="tile g6 rv" style="transition-delay:.16s"><span class="cam">✦</span><figcaption>Holiday Party · The Woodlands</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Kind Words</p>
+      <h2>What clients say</h2>
+    </div>
+    <div class="quote-grid">
+      <blockquote class="rv">
+        <span class="stars">★★★★★</span>
+        <p>“The booth was the highlight of our wedding — there was a line all night! Setup was seamless and the photos looked incredible.”</p>
+        <cite>— Maria &amp; James · Wedding</cite>
+      </blockquote>
+      <blockquote class="rv" style="transition-delay:.12s">
+        <span class="stars">★★★★★</span>
+        <p>“Professional, on time, and the custom template with our daughter's name made her quinceañera feel so special.”</p>
+        <cite>— The Ramirez Family · Quinceañera</cite>
+      </blockquote>
+      <blockquote class="rv" style="transition-delay:.24s">
+        <span class="stars">★★★★★</span>
+        <p>“Our team is still sharing the GIFs weeks later. Easiest vendor we've ever worked with for a company event.”</p>
+        <cite>— Lauren T. · Corporate Party</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow">Good to Know</p>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list rv">
+      <details>
+        <summary>How much space and power do you need?</summary>
+        <p>We need roughly a 10' × 10' area for the booth, backdrop, and prop table, plus one standard power outlet within 25 feet. We coordinate details with your venue before the event.</p>
+      </details>
+      <details>
+        <summary>How do I reserve my date?</summary>
+        <p>Send an inquiry with your event date and we'll confirm availability. A retainer locks in your date, with the balance due one week before your event. Dates are first come, first served.</p>
+      </details>
+      <details>
+        <summary>Do you travel outside of Houston?</summary>
+        <p>Yes! Travel within 30 miles of Houston is included in every package — Katy, Sugar Land, The Woodlands, Spring, Cypress, and more. Beyond that, we add a small travel fee quoted upfront.</p>
+      </details>
+      <details>
+        <summary>Can the booth be set up outdoors?</summary>
+        <p>Absolutely, as long as there's a covered, level area with access to power and protection from rain and direct sun. We'll help you pick the perfect spot.</p>
+      </details>
+      <details>
+        <summary>How do guests get their photos?</summary>
+        <p>Instantly! Guests text the capture to themselves or scan a QR code right at the booth. After the event, you receive a link to the full online gallery with every photo, GIF, and boomerang.</p>
+      </details>
+      <details>
+        <summary>What is idle time?</summary>
+        <p>Idle time is when the booth is set up but paused — for example, during dinner or a ceremony. It's a great way to have the booth ready early without paying full hourly rates.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap book-grid">
+    <div class="book-intro rv">
+      <p class="eyebrow">Book Your Date</p>
+      <h2>Let's make it official.</h2>
+      <p>Fill out a few details and we'll get back to you within 24 hours with availability and a quote. No commitment — just a conversation.</p>
+      <div class="book-detail">
+        <!-- EDIT: replace with your real email, phone, and Instagram -->
+        <div><span class="ic">✉</span><a href="mailto:hello@108photobooth.com">hello@108photobooth.com</a></div>
+        <div><span class="ic">☎</span><a href="tel:+10000000000">(000) 000-0000</a></div>
+        <div><span class="ic">◎</span><a href="#">@108photobooth</a></div>
+      </div>
+    </div>
+
+    <!-- FORM: this opens the visitor's email app pre-filled and sends to you.
+         To make it submit silently in the background instead, sign up at
+         formspree.io (free), then change the form to:
+           <form action="https://formspree.io/f/YOUR_ID" method="POST">
+         and delete the onsubmit handler + the <script> that builds the mailto. -->
+    <form id="inquiryForm" onsubmit="return sendInquiry(event)">
+      <div class="row2">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@email.com">
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="date">Event Date</label>
+          <input id="date" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="type">Event Type</label>
+          <select id="type" name="type">
+            <option>Wedding</option>
+            <option>Quinceañera</option>
+            <option>Birthday</option>
+            <option>Corporate</option>
+            <option>Graduation</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="package">Package</label>
+          <select id="package" name="package">
+            <option>Not sure yet</option>
+            <option>The Essential — $399 / 2 hrs</option>
+            <option>The Signature — $549 / 3 hrs</option>
+            <option>The Luxe — $749 / 4 hrs</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="location">Event Location</label>
+          <input id="location" name="location" placeholder="City / venue">
+        </div>
+      </div>
+      <div class="field">
+        <label for="msg">Tell us about your event</label>
+        <textarea id="msg" name="msg" placeholder="Guest count, theme, add-ons you're curious about…"></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">Send Inquiry</button>
+      <p class="form-note">We typically reply within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="mark">108</span> 108 PhotoBooth</a>
+    <div class="foot-links">
+      <a href="#how">How It Works</a>
+      <a href="#experience">The Booth</a>
+      <a href="#packages">Packages</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book">Book</a>
+    </div>
+    <p class="copy">© 2026 108 PhotoBooth · Luxury Photo Booth Rental · Houston, TX</p>
+  </div>
+</footer>
+
+<script>
+  // sticky nav
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.15});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  // trigger hero immediately
+  addEventListener('load',()=>document.querySelectorAll('.hero .rv').forEach(el=>el.classList.add('in')));
+
+  // email inquiry — opens visitor's mail app pre-filled to YOU
+  function sendInquiry(e){
+    e.preventDefault();
+    const g=id=>document.getElementById(id).value;
+    // EDIT: change this to the email you want inquiries sent to
+    const TO='hello@108photobooth.com';
+    const subject=`Booth Inquiry — ${g('name')} — ${g('date')}`;
+    const body=
+`Name: ${g('name')}
+Email: ${g('email')}
+Event Date: ${g('date')}
+Event Type: ${g('type')}
+Package: ${g('package')}
+Location: ${g('location')}
+
+Message:
+${g('msg')}`;
+    window.location.href=`mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return false;
+  }
+</script>
+</body>
+</html>
