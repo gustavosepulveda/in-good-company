@@ -1,2 +1,5 @@
 .DS_Store
 Thumbs.db
+
+# intermediate PDF page renders used while extracting the logo
+brand_render/
