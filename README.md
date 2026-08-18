@@ -61,7 +61,7 @@ Open `index.html` and search for `EDIT:` to find every spot that needs your info
 
 ## Deploy with GitHub + Netlify
 
-1. **Push to GitHub** (already set up — repo: `108-photobooth`):
+1. **Push to GitHub** (already set up — repo: `in-good-company`):
    ```bash
    git add .
    git commit -m "Describe your change"
