@@ -77,8 +77,8 @@
     background:rgba(31,48,37,.94);backdrop-filter:blur(12px);padding:10px 34px;
     box-shadow:0 1px 0 var(--line-ivory);
   }
-  .nav-logo img{height:96px;width:auto;display:block;transition:.4s}
-  nav.scrolled .nav-logo img{height:68px}
+  .nav-logo img{height:64px;width:auto;display:block;transition:.4s}
+  nav.scrolled .nav-logo img{height:48px}
   .nav-links{display:flex;gap:30px;align-items:center}
   .nav-links a{
     font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;
@@ -117,7 +117,7 @@
   /* ---------- HERO ---------- */
   header.hero{
     position:relative;min-height:100vh;display:flex;align-items:center;
-    background:var(--green);color:var(--ivory);overflow:hidden;padding:150px 0 70px;
+    background:var(--green);color:var(--ivory);overflow:hidden;padding:126px 0 70px;
   }
   /* thin ivory frame, echoing the logo lockup */
   .hero-frame{
@@ -129,7 +129,7 @@
     gap:50px;align-items:center;width:100%;
   }
   .hero h1{
-    font-size:clamp(2.5rem,5.1vw,4.5rem);color:var(--ivory);margin:22px 0 0;
+    font-size:clamp(2.5rem,5.1vw,4.5rem);color:var(--ivory);margin:0;
   }
   .hero h1 span{display:block;white-space:nowrap}
   .hero h1 .l2{font-style:italic}
@@ -139,7 +139,7 @@
   }
   .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
   .hero-doodle{position:relative;display:grid;place-items:center}
-  .hero-doodle img{width:min(100%,430px);height:auto;display:block}
+  .hero-doodle img{width:min(100%,395px);height:auto;display:block}
   .hero-scroll{
     position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;
     font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,235,216,.5);
@@ -352,9 +352,9 @@
     .hero-grid,.exp-grid,.book-grid{grid-template-columns:1fr;gap:40px}
     .hero-doodle{order:-1}
     .hero-doodle img{width:min(72%,290px)}
-    .hero{text-align:center;padding-top:124px}
-    .nav-logo img{height:74px}
-    nav.scrolled .nav-logo img{height:56px}
+    .hero{text-align:center;padding-top:110px}
+    .nav-logo img{height:54px}
+    nav.scrolled .nav-logo img{height:44px}
     .hero .lede{margin-left:auto;margin-right:auto}
     .hero-btns{justify-content:center}
     .steps,.quote-grid{grid-template-columns:1fr}
@@ -379,7 +379,7 @@
 
 <nav id="nav">
   <a href="#top" class="nav-logo" aria-label="In Good Company — home">
-    <img src="assets/logo-stacked.png" alt="In Good Company — Photo Booths + Event Experiences, Houston, Texas">
+    <img src="assets/doodle.png" alt="In Good Company">
   </a>
   <div class="nav-links">
     <a href="#how">How It Works</a>
@@ -398,7 +398,6 @@
   <div class="hero-frame"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="label on-green rv" style="--d:0s">Photo Booths + Event Experiences</p>
       <h1 class="rv" style="--d:.1s">
         <span class="l1">Good photos.</span>
         <span class="l2">Good people.</span>
@@ -411,10 +410,10 @@
       </div>
     </div>
     <div class="hero-doodle rv" style="--d:.18s">
-      <img src="assets/doodle.png" alt="Illustration of a couple dancing under a disco ball">
+      <img src="assets/logo-stacked.png" alt="In Good Company — Photo Booths + Event Experiences, Houston, Texas">
     </div>
   </div>
-  <div class="hero-scroll">Houston, Texas</div>
+  <div class="hero-scroll" aria-hidden="true"></div>
 </header>
 
 <div class="strip">
